@@ -21,7 +21,7 @@ namespace GSTExtract
         /// <param name="path">The path to the file.</param>
         /// <param name="e">The endianess of the stream, Big Endian by default.</param>
         public EndianBinaryReader(string path, Endianess e = Endianess.Big)
-            : base(new MemoryStream(File.ReadAllBytes(path)))
+            : base(new MemoryStream(File.ReadAllBytes(path)), Encoding.GetEncoding("shift-jis"))
         {
             mEndianess = e;
         }
